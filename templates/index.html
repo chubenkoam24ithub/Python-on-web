@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}Средневековое MMORPG-приключение{% endblock %}
+{% block content %}
+<main>
+    <section class="hero bg-light py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h2>Погрузись в мир TheGotma - нажмите Enter для магии!</h2>
+                    <p class="lead">Захватывающее MMORPG-приключение в пиксельно-кубическом мире, где игроки смогут полностью погрузиться в уникальный игровой опыт.</p>
+                    <a href="#join" class="btn btn-primary btn-lg">Присоединиться сейчас</a>
+                </div>
+                <div class="col-md-6">
+                    <img src="{{ url_for('static', filename='img/hero.png') }}" alt="Игровой мир TheGotma" class="img-fluid rounded">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-5">
+        <div class="container">
+            <h2>Об игре</h2>
+            <p>TheGotma — это MMORPG-песочница в пиксельно-кубическом мире, где твои решения определяют твой путь. Здесь царит свобода выбора, позволяя тебе создавать собственную историю. Сражайся, исследуй, строй и торгуй — всё в твоих руках!</p>
+        </div>
+    </section>
+
+    <section id="join" class="bg-light py-5">
+        <div class="container text-center">
+            <h2>Готов стать частью мира TheGotma?</h2>
+            <p class="lead">Присоединяйся к нам и начни своё приключение!</p>
+            <button class="btn btn-success btn-lg">Начать игру</button>
+        </div>
+    </section>
+</main>
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/index.js') }}"></script>
+{% endblock %}

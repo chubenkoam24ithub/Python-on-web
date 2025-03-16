@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TheGotma - {% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+</head>
+<body>
+    <header class="bg-dark text-white py-3">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <h1 class="m-0">TheGotma</h1>
+                <nav>
+                    <ul class="nav">
+                        <li class="nav-item"><a href="{{ url_for('main.index') }}" class="nav-link">Главная</a></li>
+                        <li class="nav-item"><a href="{{ url_for('main.features') }}" class="nav-link">Особенности</a></li>
+                        <li class="nav-item"><a href="{{ url_for('main.gallery') }}" class="nav-link">Галерея</a></li>
+                        {% if 'user_id' in session %}
+                            <li class="nav-item"><a href="{{ url_for('auth.profile') }}" class="nav-link">Профиль</a></li>
+                            <li class="nav-item"><a href="{{ url_for('auth.logout') }}" class="nav-link">Выйти</a></li>
+                        {% else %}
+                            <li class="nav-item"><a href="#" class="nav-link" data-toggle="modal" data-target="#loginModal">Вход</a></li>
+                        {% endif %}
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert alert-{{ 'danger' if category == 'error' else 'success' }} text-center" role="alert">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    {% if login_form %}
+        {% include 'login.html' %}
+    {% endif %}
+    {% if register_form %}
+        {% include 'register.html' %}
+    {% endif %}
+
+    <footer class="bg-dark text-white text-center py-3">
+        <div class="container">
+            <p>© 2025 TheGotma. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="{{ url_for('static', filename='js/modal.js') }}"></script>
+    {% block scripts %}{% endblock %}
+</body>
+</html>ы

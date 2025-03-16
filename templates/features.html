@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block title %}Особенности игры{% endblock %}
+{% block content %}
+<main>
+    <section id="features" class="bg-light py-5">
+        <div class="container">
+            <h2>Особенности игры - нажмите на Enter</h2>
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <img src="{{ url_for('static', filename='img/feature1.jpg') }}" alt="Плавная прогрессия" class="img-fluid rounded mb-2">
+                    <h4>Плавная прогрессия</h4>
+                    <p>Развивай своего персонажа без ограничений классов, выбирай собственный путь.</p>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <img src="{{ url_for('static', filename='img/feature2.jpg') }}" alt="Динамичные бои" class="img-fluid rounded mb-2">
+                    <h4>Динамичные бои</h4>
+                    <p>Экшен-бои от первого лица, требующие мастерства и стратегии, без авто-таргетинга.</p>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <img src="{{ url_for('static', filename='img/feature3.jpg') }}" alt="Масштабные сражения" class="img-fluid rounded mb-2">
+                    <h4>Масштабные сражения</h4>
+                    <p>Участвуй в PvP-сражениях, захватывай территории и участвуй в осадах замков.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <img src="{{ url_for('static', filename='img/feature4.jpg') }}" alt="Битвы за ресурсы" class="img-fluid rounded mb-2">
+                    <h4>Битвы за ресурсы</h4>
+                    <p>Сражайся за ценные ресурсы, используя разнообразные тактики и стратегии.</p>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <img src="{{ url_for('static', filename='img/feature5.jpg') }}" alt="Уникальные предметы" class="img-fluid rounded mb-2">
+                    <h4>Уникальные предметы</h4>
+                    <p>Создавай предметы с помощью «инновационной» системы добычи материалов.</p>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <img src="{{ url_for('static', filename='img/feature6.jpg') }}" alt="Экономика игроков" class="img-fluid rounded mb-2">
+                    <h4>Экономика игроков</h4>
+                    <p>Торгуй с другими игроками, формируя экономику TheGotma.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/features.js') }}"></script>
+{% endblock %}

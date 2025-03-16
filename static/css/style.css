@@ -1,0 +1,360 @@
+html {
+    height: 100%;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+footer {
+    flex-shrink: 0;
+}
+
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    height: 650px;
+}
+
+.image-container {
+    display: flex;
+    transition: margin-left 0.5s ease;
+    width: 100%;
+    height: 100%;
+}
+
+.image-wrapper {
+    flex: 0 0 100%;
+    max-width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.carousel-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    max-height: 650px;
+    max-width: 100%;
+    transition: transform 0.3s ease;
+}
+
+.character-description {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.image-wrapper:hover .character-description {
+    opacity: 1;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.carousel-left {
+    left: 10px;
+}
+
+.carousel-right {
+    right: 10px;
+}
+
+.button-container-small {
+    display: none;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.carousel-button-small {
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.carousel-indicators {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.carousel-indicator {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.carousel-indicator.active {
+    background-color: #ffd700;
+}
+
+.carousel h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+@media (max-width: 768px) {
+    .carousel-button {
+        display: none;
+    }
+
+    .button-container-small {
+        display: block;
+    }
+
+    .carousel-container {
+        height: 390px;
+    }
+
+    .carousel-image {
+        max-height: 390px;
+    }
+
+    .carousel h2 {
+        font-size: 1.8rem;
+    }
+
+    .character-description {
+        font-size: 0.9rem;
+        padding: 8px 15px;
+    }
+}
+
+.hero {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #333;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.hero .lead {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.nav-link {
+    color: white !important;
+}
+
+.nav-link:hover {
+    color: #ccc !important;
+}
+
+.gallery-item {
+    margin-bottom: 20px;
+}
+
+.gallery-item img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.magic-particles-global {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+.magic-particle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    opacity: 0.8;
+    transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+}
+
+.carousel-item img {
+    max-height: 1000px;
+    object-fit: cover;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: #060708;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+}
+
+.carousel-inner {
+    transition: transform 0.2s;
+}
+
+#features .col-md-4 {
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+#features h4 {
+    transition: color 0.3s ease;
+}
+
+.glow-effect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 215, 0, 0.3) 0%, rgba(255, 215, 0, 0) 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+}
+
+.pulse {
+    animation: pulse 0.5s ease-in-out 3;
+}
+
+@keyframes pulse {
+    0% {
+        transform: translateY(-10px) scale(1);
+    }
+
+    50% {
+        transform: translateY(-10px) scale(1.05);
+    }
+
+    100% {
+        transform: translateY(-10px) scale(1);
+    }
+}
+
+#about h2,
+.btn-primary {
+    transition: transform 0.3s ease;
+}
+
+.hero img {
+    transition: transform 0.3s ease;
+}
+
+.magic-particles {
+    position: absolute;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.hover-scale {
+    transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+    transform: scale(1.05);
+}
+
+/* Новые стили для модальных окон */
+.modal-content {
+    background-color: #fff; /* Белый фон для контраста */
+    color: #333; /* Тёмный текст */
+    border-radius: 5px;
+}
+
+.modal-header {
+    background-color: #f8f9fa; /* Светло-серый фон заголовка */
+    border-bottom: 1px solid #dee2e6;
+}
+
+.modal-title {
+    color: #333;
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.form-group label {
+    color: #333; 
+    font-weight: bold;
+}
+
+.form-control {
+    background-color: #f8f9fa; 
+    color: #333; 
+    border: 1px solid #ced4da;
+}
+
+.form-control:focus {
+    background-color: #fff;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+.form-check-label {
+    color: #333;
+}
+
+.form-check-label a {
+    color: #007bff;
+}
+
+.form-check-label a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}

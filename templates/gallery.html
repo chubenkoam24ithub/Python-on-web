@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}Галерея{% endblock %}
+{% block content %}
+<main>
+    <section class="carousel py-5">
+        <div class="container text-center">
+            <h2>Персонажи Enter / Shift+Enter</h2>
+            <div class="carousel-container">
+                <button class="carousel-left carousel-button">←</button>
+                <div class="image-container">
+                    <div class="image-wrapper wrapper-1">
+                        <img data-src="{{ url_for('static', filename='img/1.png') }}" alt="Персонаж 1" class="carousel-image">
+                        <div class="character-description">Воин теней - мастер скрытности и быстрых ударов.</div>
+                    </div>
+                    <div class="image-wrapper">
+                        <img data-src="{{ url_for('static', filename='img/2.png') }}" alt="Персонаж 2" class="carousel-image">
+                        <div class="character-description">Маг огня - повелитель стихий и разрушительных заклинаний.</div>
+                    </div>
+                    <div class="image-wrapper">
+                        <img data-src="{{ url_for('static', filename='img/3.png') }}" alt="Персонаж 3" class="carousel-image">
+                        <div class="character-description">Рыцарь света - защитник слабых и борец за справедливость.</div>
+                    </div>
+                </div>
+                <button class="carousel-right carousel-button">→</button>
+            </div>
+            <div class="carousel-indicators"></div>
+            <div class="button-container-small">
+                <button class="carousel-left-small carousel-button-small">←</button>
+                <button class="carousel-right-small carousel-button-small">→</button>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/gallery.js') }}"></script>
+{% endblock %}
